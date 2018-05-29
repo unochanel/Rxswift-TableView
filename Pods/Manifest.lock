@@ -1,0 +1,37 @@
+PODS:
+  - Either (2.0.0):
+    - Prelude (~> 3.0.0)
+  - Prelude (3.0.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+
+DEPENDENCIES:
+  - "Either (from `git@github.com:robrix/Either.git`, commit `7a6d402`)"
+  - R.swift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Prelude
+    - R.swift
+    - R.swift.Library
+
+EXTERNAL SOURCES:
+  Either:
+    :commit: 7a6d402
+    :git: "git@github.com:robrix/Either.git"
+
+CHECKOUT OPTIONS:
+  Either:
+    :commit: 7a6d402
+    :git: "git@github.com:robrix/Either.git"
+
+SPEC CHECKSUMS:
+  Either: 6cb836eaee476ad16f1012f130fd94770e5853f0
+  Prelude: fe4cc0fd961d34edf48fe6b04d05c863449efb0a
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+
+PODFILE CHECKSUM: 77c324363b11625c0c08e570c5a38b704bb25750
+
+COCOAPODS: 1.5.3

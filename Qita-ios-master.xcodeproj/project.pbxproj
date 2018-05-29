@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		572098A6C288647E05300252 /* Pods_Qita_ios_master.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C244A61964056AA25F706E /* Pods_Qita_ios_master.framework */; };
+		A051DA7E20BD367200CF903E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DA7D20BD367200CF903E /* AppDelegate.swift */; };
+		A051DA8520BD367300CF903E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A051DA8420BD367300CF903E /* Assets.xcassets */; };
+		A051DA8820BD367300CF903E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A051DA8620BD367300CF903E /* LaunchScreen.storyboard */; };
+		A051DA9020BD389000CF903E /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DA8F20BD389000CF903E /* ArticleViewController.swift */; };
+		A051DA9220BD38AA00CF903E /* ArticleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A051DA9120BD38AA00CF903E /* ArticleViewController.storyboard */; };
+		A051DA9720BD390D00CF903E /* ArticleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DA9520BD390D00CF903E /* ArticleViewCell.swift */; };
+		A051DA9820BD390D00CF903E /* ArticleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A051DA9620BD390D00CF903E /* ArticleViewCell.xib */; };
+		A051DA9F20BD398400CF903E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051DA9920BD398200CF903E /* RxSwift.framework */; };
+		A051DAA220BD398400CF903E /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051DA9C20BD398300CF903E /* SDWebImage.framework */; };
+		A051DAA320BD398400CF903E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051DA9D20BD398300CF903E /* RxCocoa.framework */; };
+		A051DAA420BD398400CF903E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051DA9E20BD398300CF903E /* Alamofire.framework */; };
+		A051DAA820BD3AAE00CF903E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAA720BD3AAE00CF903E /* R.generated.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		21C244A61964056AA25F706E /* Pods_Qita_ios_master.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qita_ios_master.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9775DF0DB238CCAFF4C53993 /* Pods-Qita-ios-master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.debug.xcconfig"; sourceTree = "<group>"; };
+		A051DA7A20BD367200CF903E /* Qita-ios-master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qita-ios-master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A051DA7D20BD367200CF903E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A051DA8420BD367300CF903E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A051DA8720BD367300CF903E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A051DA8920BD367300CF903E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A051DA8F20BD389000CF903E /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		A051DA9120BD38AA00CF903E /* ArticleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleViewController.storyboard; sourceTree = "<group>"; };
+		A051DA9520BD390D00CF903E /* ArticleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewCell.swift; sourceTree = "<group>"; };
+		A051DA9620BD390D00CF903E /* ArticleViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleViewCell.xib; sourceTree = "<group>"; };
+		A051DA9920BD398200CF903E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		A051DA9A20BD398200CF903E /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		A051DA9B20BD398300CF903E /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		A051DA9C20BD398300CF903E /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		A051DA9D20BD398300CF903E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		A051DA9E20BD398300CF903E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		A051DAA720BD3AAE00CF903E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A051DA7720BD367200CF903E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A051DA9F20BD398400CF903E /* RxSwift.framework in Frameworks */,
+				A051DAA220BD398400CF903E /* SDWebImage.framework in Frameworks */,
+				A051DAA320BD398400CF903E /* RxCocoa.framework in Frameworks */,
+				A051DAA420BD398400CF903E /* Alamofire.framework in Frameworks */,
+				572098A6C288647E05300252 /* Pods_Qita_ios_master.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A24E75D0F9B4F681346C934 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9775DF0DB238CCAFF4C53993 /* Pods-Qita-ios-master.debug.xcconfig */,
+				CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		84A47DC8CADB29D237A27D6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A051DA9E20BD398300CF903E /* Alamofire.framework */,
+				A051DA9A20BD398200CF903E /* RxBlocking.framework */,
+				A051DA9D20BD398300CF903E /* RxCocoa.framework */,
+				A051DA9920BD398200CF903E /* RxSwift.framework */,
+				A051DA9B20BD398300CF903E /* RxTest.framework */,
+				A051DA9C20BD398300CF903E /* SDWebImage.framework */,
+				21C244A61964056AA25F706E /* Pods_Qita_ios_master.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A051DA7120BD367200CF903E = {
+			isa = PBXGroup;
+			children = (
+				A051DA7C20BD367200CF903E /* Qita-ios-master */,
+				A051DA7B20BD367200CF903E /* Products */,
+				0A24E75D0F9B4F681346C934 /* Pods */,
+				84A47DC8CADB29D237A27D6F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A051DA7B20BD367200CF903E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A051DA7A20BD367200CF903E /* Qita-ios-master.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A051DA7C20BD367200CF903E /* Qita-ios-master */ = {
+			isa = PBXGroup;
+			children = (
+				A051DA8F20BD389000CF903E /* ArticleViewController.swift */,
+				A051DA9120BD38AA00CF903E /* ArticleViewController.storyboard */,
+				A051DA9520BD390D00CF903E /* ArticleViewCell.swift */,
+				A051DA9620BD390D00CF903E /* ArticleViewCell.xib */,
+				A051DA7D20BD367200CF903E /* AppDelegate.swift */,
+				A051DAA720BD3AAE00CF903E /* R.generated.swift */,
+				A051DA8420BD367300CF903E /* Assets.xcassets */,
+				A051DA8620BD367300CF903E /* LaunchScreen.storyboard */,
+				A051DA8920BD367300CF903E /* Info.plist */,
+			);
+			path = "Qita-ios-master";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A051DA7920BD367200CF903E /* Qita-ios-master */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A051DA8C20BD367300CF903E /* Build configuration list for PBXNativeTarget "Qita-ios-master" */;
+			buildPhases = (
+				A051DAA520BD39B200CF903E /* Rswift */,
+				3983C3C4738C42C38CAE2659 /* [CP] Check Pods Manifest.lock */,
+				A051DA7620BD367200CF903E /* Sources */,
+				A051DA7720BD367200CF903E /* Frameworks */,
+				A051DA7820BD367200CF903E /* Resources */,
+				1BFB41135CB1C65477181483 /* [CP] Embed Pods Frameworks */,
+				A051DAA620BD39B400CF903E /*  Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Qita-ios-master";
+			productName = "Qita-ios-master";
+			productReference = A051DA7A20BD367200CF903E /* Qita-ios-master.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A051DA7220BD367200CF903E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = ryouheiuno;
+				TargetAttributes = {
+					A051DA7920BD367200CF903E = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A051DA7520BD367200CF903E /* Build configuration list for PBXProject "Qita-ios-master" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A051DA7120BD367200CF903E;
+			productRefGroup = A051DA7B20BD367200CF903E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A051DA7920BD367200CF903E /* Qita-ios-master */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A051DA7820BD367200CF903E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A051DA9220BD38AA00CF903E /* ArticleViewController.storyboard in Resources */,
+				A051DA8820BD367300CF903E /* LaunchScreen.storyboard in Resources */,
+				A051DA8520BD367300CF903E /* Assets.xcassets in Resources */,
+				A051DA9820BD390D00CF903E /* ArticleViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BFB41135CB1C65477181483 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Either/Either.framework",
+				"${BUILT_PRODUCTS_DIR}/Prelude/Prelude.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Either.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Prelude.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3983C3C4738C42C38CAE2659 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Qita-ios-master-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A051DAA520BD39B200CF903E /* Rswift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Rswift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Qita-ios-master\"";
+		};
+		A051DAA620BD39B400CF903E /*  Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			name = " Carthage";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A051DA7620BD367200CF903E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A051DA7E20BD367200CF903E /* AppDelegate.swift in Sources */,
+				A051DA9720BD390D00CF903E /* ArticleViewCell.swift in Sources */,
+				A051DA9020BD389000CF903E /* ArticleViewController.swift in Sources */,
+				A051DAA820BD3AAE00CF903E /* R.generated.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A051DA8620BD367300CF903E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A051DA8720BD367300CF903E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A051DA8A20BD367300CF903E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A051DA8B20BD367300CF903E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A051DA8D20BD367300CF903E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9775DF0DB238CCAFF4C53993 /* Pods-Qita-ios-master.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Qita-ios-master/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ryou-0222.Qita-ios-master";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A051DA8E20BD367300CF903E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Qita-ios-master/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ryou-0222.Qita-ios-master";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A051DA7520BD367200CF903E /* Build configuration list for PBXProject "Qita-ios-master" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A051DA8A20BD367300CF903E /* Debug */,
+				A051DA8B20BD367300CF903E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A051DA8C20BD367300CF903E /* Build configuration list for PBXNativeTarget "Qita-ios-master" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A051DA8D20BD367300CF903E /* Debug */,
+				A051DA8E20BD367300CF903E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A051DA7220BD367200CF903E /* Project object */;
+}

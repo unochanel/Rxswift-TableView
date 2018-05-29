@@ -1,0 +1,28 @@
+{
+  "name": "Either",
+  "version": "2.0.0",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "homepage": "https://github.com/robrix/Either",
+  "authors": {
+    "Rob Rix": "rob.rix@github.com"
+  },
+  "summary": "Swift µframework of Either, which represents two alternatives.",
+  "source": {
+    "git": "https://github.com/robrix/Either.git",
+    "tag": "2.0.0"
+  },
+  "source_files": "Either/*.swift",
+  "dependencies": {
+    "Prelude": [
+      "~> 3.0.0"
+    ]
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.9"
+  }
+}
