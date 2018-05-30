@@ -8,11 +8,14 @@
 
 import Foundation
 import Alamofire
+import RxCocoa
+import RxSwift
 
 class QitaRssAPI{
-    func getQitaRss(handler: @escaping ([QitaRssGet]?, Error?) -> Void){
+    var vm = ArticleViewModel()
+    
+    func getQitaRss() {
         var qitaRssGet: [QitaRssGet]? = []
-
         Alamofire.request("https://qiita.com/api/v2/items?page=1&per_page=5", method: .get)
                  .responseJSON{ response in
 
@@ -22,9 +25,12 @@ class QitaRssAPI{
                 } catch _ {
                 }
                 do{
-                    handler(qitaRssGet, nil)
+                    //qitaRssGet, nilの2つの値を返している。
+                    self.vm.apiQita.onNext(qitaRssGet ?? nil)
+                    self.vm.apiError.onNext(nil)
                 } catch let error {
-                    handler(nil, error)
+                    self.vm.apiQita.onNext(nil)
+                    self.vm.apiError.onNext(error)
                 }
         }
     }

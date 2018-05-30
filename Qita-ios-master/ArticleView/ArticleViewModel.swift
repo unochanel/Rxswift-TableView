@@ -11,32 +11,42 @@ import RxCocoa
 import RxSwift
 import Either
 
+
 class ArticleViewModel {
     private let bag = DisposeBag()
     let refreshTrigger = PublishSubject<Void>()
-    
+    public var apiQita = PublishSubject<[QitaRssGet]?>()
+    public var apiError = PublishSubject<Error?>()
+    let cellModels = Variable<[ArticleCellViewModel]>([])
+
     init() {
-        refreshed$ = refreshTrigger
+        refreshTrigger
             .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
-            .subscribe( { [weak self]  in
-                getQitaAPI()
+            .subscribe(onNext: { [weak self] _ in
+                guard let wself = self else { return }
+                QitaRssAPI().getQitaRss()
+                
+                let _ = Observable
+                    .combineLatest(wself.apiQita,wself.apiError)
+                    .subscribe(onNext: {[weak self] qita, error in
+                        guard let wself = self else { return }
+                        guard error == nil else {
+                            //ToDo:ここにエラーの処理を書く
+                            return
+                            
+                        }
+                        guard let qita = qita else {
+                            //ToDo:ここにエラーの処理を書く
+                            return
+                        }
+                        wself.sync(models: qita)
+                    })
             })
     }
 }
 
-extension class ArticleViewModel {
-    private func getQitaAPI() {
-        QitaRssAPI().getQitaRss(handler: { [weak self]( QitaRssGet, error)in
-            guard let wself = self else { return }
-            guard error == nil else {
-                //todo: エラーの時の表示
-                return
-            }
-            let qitaRssGet = qitaRssGet else { return }
-        })
-        wself.sync(models: QitaRssAPI)
-    }
-    private func sync(models: [QitaRssAPI]) {
-        cellModels.value = models.map { ArticleViewModel($0) }
+extension ArticleViewModel {
+    func sync (models: [QitaRssGet]) {
+        cellModels.value = models.map { ArticleCellViewModel($0) }
     }
 }
