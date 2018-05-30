@@ -20,6 +20,10 @@
 		A051DAA320BD398400CF903E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051DA9D20BD398300CF903E /* RxCocoa.framework */; };
 		A051DAA420BD398400CF903E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051DA9E20BD398300CF903E /* Alamofire.framework */; };
 		A051DAA820BD3AAE00CF903E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAA720BD3AAE00CF903E /* R.generated.swift */; };
+		A051DAAA20BD3D4F00CF903E /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAA920BD3D4F00CF903E /* ArticleViewModel.swift */; };
+		A051DAAE20BD4BE000CF903E /* QitaCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAAD20BD4BE000CF903E /* QitaCodable.swift */; };
+		A051DAB420BD515100CF903E /* QitaRssAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAB320BD515100CF903E /* QitaRssAPI.swift */; };
+		A051DABC20BE813600CF903E /* ArticleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DABB20BE813600CF903E /* ArticleCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		A051DA9D20BD398300CF903E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		A051DA9E20BD398300CF903E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		A051DAA720BD3AAE00CF903E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		A051DAA920BD3D4F00CF903E /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		A051DAAD20BD4BE000CF903E /* QitaCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaCodable.swift; sourceTree = "<group>"; };
+		A051DAB320BD515100CF903E /* QitaRssAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaRssAPI.swift; sourceTree = "<group>"; };
+		A051DABB20BE813600CF903E /* ArticleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellModel.swift; sourceTree = "<group>"; };
 		CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,10 +112,8 @@
 		A051DA7C20BD367200CF903E /* Qita-ios-master */ = {
 			isa = PBXGroup;
 			children = (
-				A051DA8F20BD389000CF903E /* ArticleViewController.swift */,
-				A051DA9120BD38AA00CF903E /* ArticleViewController.storyboard */,
-				A051DA9520BD390D00CF903E /* ArticleViewCell.swift */,
-				A051DA9620BD390D00CF903E /* ArticleViewCell.xib */,
+				A051DAAB20BD4A9000CF903E /* ArticleView */,
+				A051DAAC20BD4B9B00CF903E /* API */,
 				A051DA7D20BD367200CF903E /* AppDelegate.swift */,
 				A051DAA720BD3AAE00CF903E /* R.generated.swift */,
 				A051DA8420BD367300CF903E /* Assets.xcassets */,
@@ -115,6 +121,28 @@
 				A051DA8920BD367300CF903E /* Info.plist */,
 			);
 			path = "Qita-ios-master";
+			sourceTree = "<group>";
+		};
+		A051DAAB20BD4A9000CF903E /* ArticleView */ = {
+			isa = PBXGroup;
+			children = (
+				A051DA8F20BD389000CF903E /* ArticleViewController.swift */,
+				A051DAA920BD3D4F00CF903E /* ArticleViewModel.swift */,
+				A051DA9120BD38AA00CF903E /* ArticleViewController.storyboard */,
+				A051DA9520BD390D00CF903E /* ArticleViewCell.swift */,
+				A051DABB20BE813600CF903E /* ArticleCellModel.swift */,
+				A051DA9620BD390D00CF903E /* ArticleViewCell.xib */,
+			);
+			path = ArticleView;
+			sourceTree = "<group>";
+		};
+		A051DAAC20BD4B9B00CF903E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A051DAAD20BD4BE000CF903E /* QitaCodable.swift */,
+				A051DAB320BD515100CF903E /* QitaRssAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +297,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A051DA7E20BD367200CF903E /* AppDelegate.swift in Sources */,
+				A051DAB420BD515100CF903E /* QitaRssAPI.swift in Sources */,
 				A051DA9720BD390D00CF903E /* ArticleViewCell.swift in Sources */,
 				A051DA9020BD389000CF903E /* ArticleViewController.swift in Sources */,
+				A051DAAE20BD4BE000CF903E /* QitaCodable.swift in Sources */,
+				A051DAAA20BD3D4F00CF903E /* ArticleViewModel.swift in Sources */,
+				A051DABC20BE813600CF903E /* ArticleCellModel.swift in Sources */,
 				A051DAA820BD3AAE00CF903E /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

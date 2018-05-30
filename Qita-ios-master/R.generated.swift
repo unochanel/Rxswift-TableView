@@ -49,8 +49,11 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `articleViewCell`.
+    static let articleViewCell: Rswift.ReuseIdentifier<ArticleViewCell> = Rswift.ReuseIdentifier(identifier: "articleViewCell")
+    
     fileprivate init() {}
   }
   
@@ -103,8 +106,11 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
-    struct _ArticleViewCell: Rswift.NibResourceType {
+    struct _ArticleViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ArticleViewCell
+      
       let bundle = R.hostingBundle
+      let identifier = "articleViewCell"
       let name = "ArticleViewCell"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ArticleViewCell? {
