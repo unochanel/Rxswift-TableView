@@ -15,7 +15,7 @@ class ArticleViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     private var vm = ArticleViewModel()
     @IBOutlet weak var tableView: UITableView!
-    
+
     static func create() -> UIViewController {
         return R.storyboard.articleViewController().instantiateInitialViewController()!
     }
@@ -36,11 +36,11 @@ extension ArticleViewController {
     func configureVM() {
         vm
             .cellModels
-            .asObservable()
-            .bind(to: tableView.rx.items(
+            .asDriver()
+            .drive(tableView.rx.items(
                 cellIdentifier: R.reuseIdentifier.articleViewCell.identifier,
                 cellType:       ArticleViewCell.self
-            )){ (_, cm, cell) in
+            )) { _, cm, cell in
                 cell.configure(cm: cm)
             }
             .disposed(by: bag)
@@ -51,7 +51,7 @@ extension ArticleViewController {
     }
 }
 
-extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
+extension ArticleViewController: UITableViewDelegate {
     func tableView(_: UITableView, editingStyleForRowAt _: IndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.none
     }
@@ -59,12 +59,12 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 80
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "articleViewCell") as! ArticleViewCell
-        return cell
-    }
-    
+
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "articleViewCell") as! ArticleViewCell
+//        return cell
+//    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }

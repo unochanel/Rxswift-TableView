@@ -17,7 +17,7 @@ class ArticleViewModel {
     let refreshTrigger = PublishSubject<Void>()
     public var apiQita = PublishSubject<[QitaRssGet]?>()
     public var apiError = PublishSubject<Error?>()
-    let cellModels = Variable<[ArticleCellViewModel]>([])
+    let cellModels = Variable <[ArticleCellViewModel]>([])
     let refreshed$ = PublishSubject<Void>()
     
     init() {
@@ -34,20 +34,28 @@ class ArticleViewModel {
                 apiQita,
                 apiError
         )
-
+        
         refreshed$
             .withLatestFrom(merged)
             .subscribe(onNext: {[weak self] qita, error in
                 guard let wself = self else { return }
                 guard error == nil else {
                     //ToDo:ここにエラーの処理を書く
+                    //通信エラー的なやつを流す
                     return
                 }
                 guard let qita = qita else {
                     //ToDo:ここにエラーの処理を書く
+                    //ここも通信エラー的なノリのやつを書く
                     return
                 }
                 wself.sync(models: qita)
+            })
+            .disposed(by: bag)
+
+        cellModels
+            .asObservable()
+            .subscribe(onNext: {[weak self] _ in
             })
             .disposed(by: bag)
     }
@@ -55,8 +63,7 @@ class ArticleViewModel {
 
 extension ArticleViewModel {
     func sync (models: [QitaRssGet]) {
-        print(models)
-        //AreticleCellViewModelを初期化して、それぞれをmappingさせている
+        //AreticleCellViewModelを初期化して、引数のmodelsをArticleCellViewModelにmappingさせている
         cellModels.value = models.map { ArticleCellViewModel($0) }
     }
 }
