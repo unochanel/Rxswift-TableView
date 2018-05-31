@@ -30,6 +30,20 @@ class ArticleViewController: UIViewController {
 extension ArticleViewController {
     func configure() {
         configureUI()
+        configureVM()
+    }
+    
+    func configureVM() {
+        vm
+            .cellModels
+            .asObservable()
+            .bind(to: tableView.rx.items(
+                cellIdentifier: R.reuseIdentifier.articleViewCell.identifier,
+                cellType:       ArticleViewCell.self
+            )){ (_, cm, cell) in
+                cell.configure(cm: cm)
+            }
+            .disposed(by: bag)
     }
     
     func configureUI() {
@@ -52,7 +66,7 @@ extension ArticleViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
 }
 extension ArticleViewController {

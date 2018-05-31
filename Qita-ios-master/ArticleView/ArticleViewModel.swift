@@ -18,35 +18,45 @@ class ArticleViewModel {
     public var apiQita = PublishSubject<[QitaRssGet]?>()
     public var apiError = PublishSubject<Error?>()
     let cellModels = Variable<[ArticleCellViewModel]>([])
-
+    let refreshed$ = PublishSubject<Void>()
+    
     init() {
         refreshTrigger
             .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 guard let wself = self else { return }
                 QitaRssAPI().getQitaRss()
-                
-                let _ = Observable
-                    .combineLatest(wself.apiQita,wself.apiError)
-                    .subscribe(onNext: {[weak self] qita, error in
-                        guard let wself = self else { return }
-                        guard error == nil else {
-                            //ToDo:ここにエラーの処理を書く
-                            return
-                            
-                        }
-                        guard let qita = qita else {
-                            //ToDo:ここにエラーの処理を書く
-                            return
-                        }
-                        wself.sync(models: qita)
-                    })
             })
+            .disposed(by: bag)
+        
+        let merged = Observable
+            .combineLatest(
+                apiQita,
+                apiError
+        )
+
+        refreshed$
+            .withLatestFrom(merged)
+            .subscribe(onNext: {[weak self] qita, error in
+                guard let wself = self else { return }
+                guard error == nil else {
+                    //ToDo:ここにエラーの処理を書く
+                    return
+                }
+                guard let qita = qita else {
+                    //ToDo:ここにエラーの処理を書く
+                    return
+                }
+                wself.sync(models: qita)
+            })
+            .disposed(by: bag)
     }
 }
 
 extension ArticleViewModel {
     func sync (models: [QitaRssGet]) {
+        print(models)
+        //AreticleCellViewModelを初期化して、それぞれをmappingさせている
         cellModels.value = models.map { ArticleCellViewModel($0) }
     }
 }

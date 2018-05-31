@@ -17,8 +17,8 @@ class QitaRssAPI{
     func getQitaRss() {
         var qitaRssGet: [QitaRssGet]? = []
         Alamofire.request("https://qiita.com/api/v2/items?page=1&per_page=5", method: .get)
-                 .responseJSON{ response in
-
+            .responseJSON{ response in
+                
                 let decoder: JSONDecoder = JSONDecoder()
                 do {
                     qitaRssGet = try decoder.decode([QitaRssGet].self, from: response.data!)
@@ -32,6 +32,7 @@ class QitaRssAPI{
                     self.vm.apiQita.onNext(nil)
                     self.vm.apiError.onNext(error)
                 }
+                self.vm.refreshed$.onNext(())
         }
     }
 }
