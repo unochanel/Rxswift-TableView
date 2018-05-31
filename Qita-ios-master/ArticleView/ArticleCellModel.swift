@@ -14,7 +14,7 @@ class ArticleCellViewModel {
     let title$: Observable<String>
     let url$: Observable<URL?>
     let profileImageUrl$: Observable<URL?>
-    
+
     public init(_ apiQita: QitaRssGet) {
         title$ = Observable.just(apiQita.title)
         url$ = Observable.just(apiQita.url.toURL())

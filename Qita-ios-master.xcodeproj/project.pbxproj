@@ -22,7 +22,6 @@
 		A051DAA820BD3AAE00CF903E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAA720BD3AAE00CF903E /* R.generated.swift */; };
 		A051DAAA20BD3D4F00CF903E /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAA920BD3D4F00CF903E /* ArticleViewModel.swift */; };
 		A051DAAE20BD4BE000CF903E /* QitaCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAAD20BD4BE000CF903E /* QitaCodable.swift */; };
-		A051DAB420BD515100CF903E /* QitaRssAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAB320BD515100CF903E /* QitaRssAPI.swift */; };
 		A051DABC20BE813600CF903E /* ArticleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DABB20BE813600CF903E /* ArticleCellModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 		A051DAA720BD3AAE00CF903E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		A051DAA920BD3D4F00CF903E /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		A051DAAD20BD4BE000CF903E /* QitaCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaCodable.swift; sourceTree = "<group>"; };
-		A051DAB320BD515100CF903E /* QitaRssAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaRssAPI.swift; sourceTree = "<group>"; };
 		A051DABB20BE813600CF903E /* ArticleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellModel.swift; sourceTree = "<group>"; };
 		CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				A051DAAD20BD4BE000CF903E /* QitaCodable.swift */,
-				A051DAB320BD515100CF903E /* QitaRssAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -297,7 +294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A051DA7E20BD367200CF903E /* AppDelegate.swift in Sources */,
-				A051DAB420BD515100CF903E /* QitaRssAPI.swift in Sources */,
 				A051DA9720BD390D00CF903E /* ArticleViewCell.swift in Sources */,
 				A051DA9020BD389000CF903E /* ArticleViewController.swift in Sources */,
 				A051DAAE20BD4BE000CF903E /* QitaCodable.swift in Sources */,

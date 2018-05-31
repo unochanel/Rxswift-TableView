@@ -13,15 +13,10 @@ import SDWebImage
 
 class ArticleViewCell: UITableViewCell {
     private var bag = DisposeBag()
-    
+
     @IBOutlet weak var articleLabel: UILabel!
     @IBOutlet weak var articleImage: UIImageView!
-    
-    override func prepareForReuse() {
-        articleImage.sd_cancelCurrentAnimationImagesLoad()
-        articleImage.image = nil
-    }
-    
+
     func configure(cm: ArticleCellViewModel) {
         cm
             .title$
@@ -33,9 +28,8 @@ class ArticleViewCell: UITableViewCell {
                 guard let wself = self else { return }
                 wself.articleImage.sd_setImage(
                     with: url,
-                    completed: { image, error, cacheType, imageURL in
-                        
-                })
+                    placeholderImage: R.image.cover()
+                )
             })
             .disposed(by: bag)
     }

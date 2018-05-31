@@ -10,60 +10,34 @@ import Foundation
 import RxCocoa
 import RxSwift
 import Either
-
+import Alamofire
 
 class ArticleViewModel {
-    private let bag = DisposeBag()
-    let refreshTrigger = PublishSubject<Void>()
-    public var apiQita = PublishSubject<[QitaRssGet]?>()
-    public var apiError = PublishSubject<Error?>()
-    let cellModels = Variable <[ArticleCellViewModel]>([])
-    let refreshed$ = PublishSubject<Void>()
     
+    let refreshTrigger = PublishSubject<Void>()
+    let error = PublishSubject<Error>()
+    let isRefreshing = BehaviorRelay<Bool>(value: false)
+    let cellModels = BehaviorRelay<[ArticleCellViewModel]>(value: [])
+    
+    private let disposeBag = DisposeBag()
+
     init() {
         refreshTrigger
-            .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
-                guard let wself = self else { return }
-                QitaRssAPI().getQitaRss()
-            })
-            .disposed(by: bag)
-        
-        let merged = Observable
-            .combineLatest(
-                apiQita,
-                apiError
-        )
-        
-        refreshed$
-            .withLatestFrom(merged)
-            .subscribe(onNext: {[weak self] qita, error in
-                guard let wself = self else { return }
-                guard error == nil else {
-                    //ToDo:ここにエラーの処理を書く
-                    //通信エラー的なやつを流す
-                    return
-                }
-                guard let qita = qita else {
-                    //ToDo:ここにエラーの処理を書く
-                    //ここも通信エラー的なノリのやつを書く
-                    return
-                }
-                wself.sync(models: qita)
-            })
-            .disposed(by: bag)
+                self?.isRefreshing.accept(true)
+                Alamofire.request("https://qiita.com/api/v2/items?page=1&per_page=5", method: .get)
+                    .responseJSON{ [weak self] response in
+                        self?.isRefreshing.accept(false)
 
-        cellModels
-            .asObservable()
-            .subscribe(onNext: {[weak self] _ in
+                        let decoder: JSONDecoder = JSONDecoder()
+                        do {
+                            let models = try decoder.decode([QitaRssGet].self, from: response.data!)
+                            self?.cellModels.accept(models.map { ArticleCellViewModel($0) })
+                        } catch let error {
+                            self?.error.onNext(error)
+                    }
+                }
             })
-            .disposed(by: bag)
-    }
-}
-
-extension ArticleViewModel {
-    func sync (models: [QitaRssGet]) {
-        //AreticleCellViewModelを初期化して、引数のmodelsをArticleCellViewModelにmappingさせている
-        cellModels.value = models.map { ArticleCellViewModel($0) }
+            .disposed(by: disposeBag)
     }
 }
