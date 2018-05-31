@@ -70,12 +70,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `ArticleViewController`.
     static let articleViewController = _R.storyboard.articleViewController()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `QitaWebViewController`.
+    static let qitaWebViewController = _R.storyboard.qitaWebViewController()
     
     /// `UIStoryboard(name: "ArticleViewController", bundle: ...)`
     static func articleViewController(_: Void = ()) -> UIKit.UIStoryboard {
@@ -85,6 +87,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "QitaWebViewController", bundle: ...)`
+    static func qitaWebViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.qitaWebViewController)
     }
     
     fileprivate init() {}
@@ -133,6 +140,7 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try qitaWebViewController.validate()
       try articleViewController.validate()
     }
     
@@ -159,6 +167,24 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      fileprivate init() {}
+    }
+    
+    struct qitaWebViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = QitaWebViewController
+      
+      let bundle = R.hostingBundle
+      let name = "QitaWebViewController"
+      let qitaWebViewController = StoryboardViewControllerResource<QitaWebViewController>(identifier: "QitaWebViewController")
+      
+      func qitaWebViewController(_: Void = ()) -> QitaWebViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: qitaWebViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.qitaWebViewController().qitaWebViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'qitaWebViewController' could not be loaded from storyboard 'QitaWebViewController' as 'QitaWebViewController'.") }
+      }
       
       fileprivate init() {}
     }

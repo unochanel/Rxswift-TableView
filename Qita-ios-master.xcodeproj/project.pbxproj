@@ -23,6 +23,8 @@
 		A051DAAA20BD3D4F00CF903E /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAA920BD3D4F00CF903E /* ArticleViewModel.swift */; };
 		A051DAAE20BD4BE000CF903E /* QitaCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAAD20BD4BE000CF903E /* QitaCodable.swift */; };
 		A051DABC20BE813600CF903E /* ArticleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DABB20BE813600CF903E /* ArticleCellModel.swift */; };
+		A051DAC820C038FB00CF903E /* QitaWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAC720C038FB00CF903E /* QitaWebViewController.swift */; };
+		A051DACA20C0391000CF903E /* QitaWebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A051DAC920C0391000CF903E /* QitaWebViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		A051DAA920BD3D4F00CF903E /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		A051DAAD20BD4BE000CF903E /* QitaCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaCodable.swift; sourceTree = "<group>"; };
 		A051DABB20BE813600CF903E /* ArticleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellModel.swift; sourceTree = "<group>"; };
+		A051DAC720C038FB00CF903E /* QitaWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaWebViewController.swift; sourceTree = "<group>"; };
+		A051DAC920C0391000CF903E /* QitaWebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QitaWebViewController.storyboard; sourceTree = "<group>"; };
 		CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				A051DAAB20BD4A9000CF903E /* ArticleView */,
-				A051DAAC20BD4B9B00CF903E /* API */,
+				A051DAC620C0363100CF903E /* ArticleWebView */,
+				A051DAAC20BD4B9B00CF903E /* Codable */,
 				A051DA7D20BD367200CF903E /* AppDelegate.swift */,
 				A051DAA720BD3AAE00CF903E /* R.generated.swift */,
 				A051DA8420BD367300CF903E /* Assets.xcassets */,
@@ -134,12 +139,21 @@
 			path = ArticleView;
 			sourceTree = "<group>";
 		};
-		A051DAAC20BD4B9B00CF903E /* API */ = {
+		A051DAAC20BD4B9B00CF903E /* Codable */ = {
 			isa = PBXGroup;
 			children = (
 				A051DAAD20BD4BE000CF903E /* QitaCodable.swift */,
 			);
-			path = API;
+			path = Codable;
+			sourceTree = "<group>";
+		};
+		A051DAC620C0363100CF903E /* ArticleWebView */ = {
+			isa = PBXGroup;
+			children = (
+				A051DAC720C038FB00CF903E /* QitaWebViewController.swift */,
+				A051DAC920C0391000CF903E /* QitaWebViewController.storyboard */,
+			);
+			path = ArticleWebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +220,7 @@
 			files = (
 				A051DA9220BD38AA00CF903E /* ArticleViewController.storyboard in Resources */,
 				A051DA8820BD367300CF903E /* LaunchScreen.storyboard in Resources */,
+				A051DACA20C0391000CF903E /* QitaWebViewController.storyboard in Resources */,
 				A051DA8520BD367300CF903E /* Assets.xcassets in Resources */,
 				A051DA9820BD390D00CF903E /* ArticleViewCell.xib in Resources */,
 			);
@@ -295,6 +310,7 @@
 			files = (
 				A051DA7E20BD367200CF903E /* AppDelegate.swift in Sources */,
 				A051DA9720BD390D00CF903E /* ArticleViewCell.swift in Sources */,
+				A051DAC820C038FB00CF903E /* QitaWebViewController.swift in Sources */,
 				A051DA9020BD389000CF903E /* ArticleViewController.swift in Sources */,
 				A051DAAE20BD4BE000CF903E /* QitaCodable.swift in Sources */,
 				A051DAAA20BD3D4F00CF903E /* ArticleViewModel.swift in Sources */,

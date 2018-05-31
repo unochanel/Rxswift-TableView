@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "0.3.7",
+  "iOS" : [
+    {
+      "name" : "RxWebKit",
+      "hash" : "9453b04fef85695a16f3995ea3f5bf8a4f18bbd61b74a7b51749876097e5145e"
+    }
+  ]
+}

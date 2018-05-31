@@ -1,0 +1,4 @@
+framework module RxWebKit {
+    header "RxWebKit-Swift.h"
+    requires objc
+}

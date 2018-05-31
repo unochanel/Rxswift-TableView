@@ -33,6 +33,7 @@ extension ArticleViewController {
     func configure() {
         configureUI()
         configureVM()
+        bindToTableView()
     }
 
     func configureUI() {
@@ -51,6 +52,23 @@ extension ArticleViewController {
             .drive(refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
     }
+
+    func bindToTableView() {
+        tableView.rx.itemSelected
+            //それぞれの値をindexPathで値をながしてあげる。
+            .flatMap({ [weak self] indexPath -> Observable<URL?> in
+                guard let wself = self else { return Observable.empty() }
+                return wself.viewModel.cellModels.value[indexPath.row].url$
+            })
+            .subscribe(onNext: {[weak self] url in
+                guard let wself = self else { return }
+                guard let u = url else {
+                    assertionFailure("not exist url")
+                    return
+                }
+                //webViewに飛べるような処理をかく
+            })
+    }
 }
 
 extension ArticleViewController: UITableViewDelegate {
@@ -60,10 +78,6 @@ extension ArticleViewController: UITableViewDelegate {
 
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 80
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
     }
 }
 
