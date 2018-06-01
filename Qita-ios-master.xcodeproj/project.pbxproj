@@ -30,6 +30,7 @@
 		A051DAD120C1065100CF903E /* RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051DAD020C1065100CF903E /* RxWebKit.framework */; };
 		A05D331D20C115790071C373 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D331B20C115790071C373 /* TwitterKit.framework */; };
 		A05D331E20C115790071C373 /* TwitterShareExtensionUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D331C20C115790071C373 /* TwitterShareExtensionUI.framework */; };
+		A05D332320C14A0F0071C373 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D332220C14A0F0071C373 /* UserSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		A051DAD020C1065100CF903E /* RxWebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxWebKit.framework; path = Carthage/Build/iOS/RxWebKit.framework; sourceTree = "<group>"; };
 		A05D331B20C115790071C373 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
 		A05D331C20C115790071C373 /* TwitterShareExtensionUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterShareExtensionUI.framework; path = Carthage/Build/iOS/TwitterShareExtensionUI.framework; sourceTree = "<group>"; };
+		A05D332220C14A0F0071C373 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,10 +132,9 @@
 		A051DA7C20BD367200CF903E /* Qita-ios-master */ = {
 			isa = PBXGroup;
 			children = (
-				A051DACB20C1054E00CF903E /* LoginView */,
-				A051DAAB20BD4A9000CF903E /* ArticleView */,
-				A051DAC620C0363100CF903E /* ArticleWebView */,
+				A05D332020C149D60071C373 /* ViewControllers */,
 				A051DAAC20BD4B9B00CF903E /* Codable */,
+				A05D332120C149EE0071C373 /* UserDefault */,
 				A051DA7D20BD367200CF903E /* AppDelegate.swift */,
 				A051DAA720BD3AAE00CF903E /* R.generated.swift */,
 				A051DA8420BD367300CF903E /* Assets.xcassets */,
@@ -180,6 +181,24 @@
 				A051DACE20C1058700CF903E /* LoginViewController.storyboard */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		A05D332020C149D60071C373 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A051DACB20C1054E00CF903E /* LoginView */,
+				A051DAAB20BD4A9000CF903E /* ArticleView */,
+				A051DAC620C0363100CF903E /* ArticleWebView */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A05D332120C149EE0071C373 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				A05D332220C14A0F0071C373 /* UserSession.swift */,
+			);
+			path = UserDefault;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A051DACD20C1057100CF903E /* LoginViewController.swift in Sources */,
+				A05D332320C14A0F0071C373 /* UserSession.swift in Sources */,
 				A051DA7E20BD367200CF903E /* AppDelegate.swift in Sources */,
 				A051DA9720BD390D00CF903E /* ArticleViewCell.swift in Sources */,
 				A051DAC820C038FB00CF903E /* QitaWebViewController.swift in Sources */,

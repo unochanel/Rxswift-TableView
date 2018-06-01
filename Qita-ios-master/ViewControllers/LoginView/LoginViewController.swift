@@ -27,6 +27,7 @@ extension LoginViewController {
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 self.presentArticleViewController()
+                
             } else {
                 //todo:AlertViewControllerを使う。
                 print("errorです。")
