@@ -70,10 +70,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     /// Storyboard `ArticleViewController`.
     static let articleViewController = _R.storyboard.articleViewController()
+    /// Storyboard `LaunchDummyViewController`.
+    static let launchDummyViewController = _R.storyboard.launchDummyViewController()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `LoginViewController`.
@@ -84,6 +86,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ArticleViewController", bundle: ...)`
     static func articleViewController(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.articleViewController)
+    }
+    
+    /// `UIStoryboard(name: "LaunchDummyViewController", bundle: ...)`
+    static func launchDummyViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchDummyViewController)
     }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -149,6 +156,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try qitaWebViewController.validate()
       try articleViewController.validate()
+      try launchDummyViewController.validate()
       try loginViewController.validate()
     }
     
@@ -165,6 +173,24 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if _R.storyboard.articleViewController().articleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleViewController' could not be loaded from storyboard 'ArticleViewController' as 'ArticleViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct launchDummyViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LaunchDummyViewController
+      
+      let bundle = R.hostingBundle
+      let launchDummyViewController = StoryboardViewControllerResource<LaunchDummyViewController>(identifier: "LaunchDummyViewController")
+      let name = "LaunchDummyViewController"
+      
+      func launchDummyViewController(_: Void = ()) -> LaunchDummyViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: launchDummyViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.launchDummyViewController().launchDummyViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'launchDummyViewController' could not be loaded from storyboard 'LaunchDummyViewController' as 'LaunchDummyViewController'.") }
       }
       
       fileprivate init() {}

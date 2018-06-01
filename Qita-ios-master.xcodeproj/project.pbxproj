@@ -31,6 +31,8 @@
 		A05D331D20C115790071C373 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D331B20C115790071C373 /* TwitterKit.framework */; };
 		A05D331E20C115790071C373 /* TwitterShareExtensionUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D331C20C115790071C373 /* TwitterShareExtensionUI.framework */; };
 		A05D332320C14A0F0071C373 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D332220C14A0F0071C373 /* UserSession.swift */; };
+		A05D332A20C18C6C0071C373 /* LaunchDummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D332920C18C6C0071C373 /* LaunchDummyViewController.swift */; };
+		A05D332C20C18C820071C373 /* LaunchDummyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05D332B20C18C820071C373 /* LaunchDummyViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		A05D331B20C115790071C373 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
 		A05D331C20C115790071C373 /* TwitterShareExtensionUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterShareExtensionUI.framework; path = Carthage/Build/iOS/TwitterShareExtensionUI.framework; sourceTree = "<group>"; };
 		A05D332220C14A0F0071C373 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		A05D332920C18C6C0071C373 /* LaunchDummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDummyViewController.swift; sourceTree = "<group>"; };
+		A05D332B20C18C820071C373 /* LaunchDummyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchDummyViewController.storyboard; sourceTree = "<group>"; };
 		CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +136,7 @@
 		A051DA7C20BD367200CF903E /* Qita-ios-master */ = {
 			isa = PBXGroup;
 			children = (
-				A05D332020C149D60071C373 /* ViewControllers */,
+				A05D332020C149D60071C373 /* View */,
 				A051DAAC20BD4B9B00CF903E /* Codable */,
 				A05D332120C149EE0071C373 /* UserDefault */,
 				A051DA7D20BD367200CF903E /* AppDelegate.swift */,
@@ -183,14 +187,15 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
-		A05D332020C149D60071C373 /* ViewControllers */ = {
+		A05D332020C149D60071C373 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A05D332820C18C360071C373 /* LaunchDummyView */,
 				A051DACB20C1054E00CF903E /* LoginView */,
 				A051DAAB20BD4A9000CF903E /* ArticleView */,
 				A051DAC620C0363100CF903E /* ArticleWebView */,
 			);
-			path = ViewControllers;
+			path = View;
 			sourceTree = "<group>";
 		};
 		A05D332120C149EE0071C373 /* UserDefault */ = {
@@ -199,6 +204,15 @@
 				A05D332220C14A0F0071C373 /* UserSession.swift */,
 			);
 			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		A05D332820C18C360071C373 /* LaunchDummyView */ = {
+			isa = PBXGroup;
+			children = (
+				A05D332920C18C6C0071C373 /* LaunchDummyViewController.swift */,
+				A05D332B20C18C820071C373 /* LaunchDummyViewController.storyboard */,
+			);
+			path = LaunchDummyView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +283,7 @@
 				A051DACF20C1058700CF903E /* LoginViewController.storyboard in Resources */,
 				A051DA8520BD367300CF903E /* Assets.xcassets in Resources */,
 				A051DA9820BD390D00CF903E /* ArticleViewCell.xib in Resources */,
+				A05D332C20C18C820071C373 /* LaunchDummyViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +377,7 @@
 				A051DA7E20BD367200CF903E /* AppDelegate.swift in Sources */,
 				A051DA9720BD390D00CF903E /* ArticleViewCell.swift in Sources */,
 				A051DAC820C038FB00CF903E /* QitaWebViewController.swift in Sources */,
+				A05D332A20C18C6C0071C373 /* LaunchDummyViewController.swift in Sources */,
 				A051DA9020BD389000CF903E /* ArticleViewController.swift in Sources */,
 				A051DAAE20BD4BE000CF903E /* QitaCodable.swift in Sources */,
 				A051DAAA20BD3D4F00CF903E /* ArticleViewModel.swift in Sources */,

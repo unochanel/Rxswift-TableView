@@ -17,9 +17,9 @@ class UserSession {
 }
 
 extension UserSession {
-    static var userSession: Double? {
+    static var userSession: Bool? {
         get {
-            return userDefaults.double(forKey: Key.UserSession)
+            return userDefaults.bool(forKey: Key.UserSession)
         }
         set {
             userDefaults.set(newValue, forKey: Key.UserSession)

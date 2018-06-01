@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         configure()
     }
-    
 }
 
 extension LoginViewController {
@@ -27,19 +26,19 @@ extension LoginViewController {
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 self.presentArticleViewController()
-                
             } else {
                 //todo:AlertViewControllerを使う。
                 print("errorです。")
             }
-            
         })
         logInButton.center = self.view.center
         self.view.addSubview(logInButton)
     }
 }
+
 extension LoginViewController {
     private func presentArticleViewController() {
+        UserSession.userDefaults.set(true, forKey: UserSession.Key.UserSession)
         let articleVC = R.storyboard.articleViewController.instantiateInitialViewController()!
         present(articleVC, animated: true)
     }
