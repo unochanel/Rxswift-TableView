@@ -20,8 +20,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-4B-o0M">
-                        <rect key="frame" x="16" y="8" width="201" height="63.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hhhhhhhhhh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-4B-o0M">
+                        <rect key="frame" x="16" y="8" width="97.5" height="63.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="63.5" id="etv-fL-9CG"/>
                         </constraints>
@@ -42,7 +42,7 @@
                     <constraint firstItem="9h5-4B-o0M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Mlu-Ti-cSv"/>
                     <constraint firstAttribute="bottom" secondItem="eka-LM-qov" secondAttribute="bottom" constant="8" id="OIg-Lb-Zsh"/>
                     <constraint firstAttribute="trailing" secondItem="eka-LM-qov" secondAttribute="trailing" constant="8.5" id="cJo-o9-bfG"/>
-                    <constraint firstItem="eka-LM-qov" firstAttribute="leading" secondItem="9h5-4B-o0M" secondAttribute="trailing" constant="31" id="gWx-TR-tne"/>
+                    <constraint firstItem="eka-LM-qov" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9h5-4B-o0M" secondAttribute="trailing" constant="31" id="gWx-TR-tne"/>
                     <constraint firstItem="9h5-4B-o0M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wiA-kr-rBP"/>
                 </constraints>
             </tableViewCellContentView>

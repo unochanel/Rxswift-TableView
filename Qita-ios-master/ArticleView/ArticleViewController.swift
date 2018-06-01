@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SafariServices
 
 class ArticleViewController: UIViewController {
     
@@ -35,27 +36,26 @@ extension ArticleViewController {
         configureVM()
         bindToTableView()
     }
-
+    
     func configureUI() {
         title = "COIN NEWS"
         registerNib()
     }
-
+    
     func configureVM() {
         viewModel.cellModels.asDriver()
             .drive(tableView.rx.items(cellIdentifier: R.reuseIdentifier.articleViewCell.identifier, cellType: ArticleViewCell.self)) { _, cellModel, cell in
                 cell.configure(cm: cellModel)
             }
             .disposed(by: disposeBag)
-
+        
         viewModel.isRefreshing.asDriver()
             .drive(refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
     }
-
+    
     func bindToTableView() {
         tableView.rx.itemSelected
-            //それぞれの値をindexPathで値をながしてあげる。
             .flatMap({ [weak self] indexPath -> Observable<URL?> in
                 guard let wself = self else { return Observable.empty() }
                 return wself.viewModel.cellModels.value[indexPath.row].url$
@@ -63,12 +63,14 @@ extension ArticleViewController {
             .subscribe(onNext: {[weak self] url in
                 guard let wself = self else { return }
                 guard let u = url else {
-                    //todo: assertionFailurについて調べる。
                     assertionFailure("not exist url")
                     return
                 }
-                //webViewに飛べるような処理をかく
+                //todo:今後webViewに飛べるような処理をかく
+                    let safariViewController = SFSafariViewController(url: u)
+                    self?.present(safariViewController, animated: true, completion: nil)
             })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -76,7 +78,7 @@ extension ArticleViewController: UITableViewDelegate {
     func tableView(_: UITableView, editingStyleForRowAt _: IndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.none
     }
-
+    
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 80
     }

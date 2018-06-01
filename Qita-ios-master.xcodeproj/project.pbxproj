@@ -25,6 +25,11 @@
 		A051DABC20BE813600CF903E /* ArticleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DABB20BE813600CF903E /* ArticleCellModel.swift */; };
 		A051DAC820C038FB00CF903E /* QitaWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DAC720C038FB00CF903E /* QitaWebViewController.swift */; };
 		A051DACA20C0391000CF903E /* QitaWebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A051DAC920C0391000CF903E /* QitaWebViewController.storyboard */; };
+		A051DACD20C1057100CF903E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051DACC20C1057000CF903E /* LoginViewController.swift */; };
+		A051DACF20C1058700CF903E /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A051DACE20C1058700CF903E /* LoginViewController.storyboard */; };
+		A051DAD120C1065100CF903E /* RxWebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051DAD020C1065100CF903E /* RxWebKit.framework */; };
+		A05D331D20C115790071C373 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D331B20C115790071C373 /* TwitterKit.framework */; };
+		A05D331E20C115790071C373 /* TwitterShareExtensionUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D331C20C115790071C373 /* TwitterShareExtensionUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,11 @@
 		A051DABB20BE813600CF903E /* ArticleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellModel.swift; sourceTree = "<group>"; };
 		A051DAC720C038FB00CF903E /* QitaWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaWebViewController.swift; sourceTree = "<group>"; };
 		A051DAC920C0391000CF903E /* QitaWebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QitaWebViewController.storyboard; sourceTree = "<group>"; };
+		A051DACC20C1057000CF903E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A051DACE20C1058700CF903E /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		A051DAD020C1065100CF903E /* RxWebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxWebKit.framework; path = Carthage/Build/iOS/RxWebKit.framework; sourceTree = "<group>"; };
+		A05D331B20C115790071C373 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
+		A05D331C20C115790071C373 /* TwitterShareExtensionUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterShareExtensionUI.framework; path = Carthage/Build/iOS/TwitterShareExtensionUI.framework; sourceTree = "<group>"; };
 		CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05D331D20C115790071C373 /* TwitterKit.framework in Frameworks */,
+				A05D331E20C115790071C373 /* TwitterShareExtensionUI.framework in Frameworks */,
+				A051DAD120C1065100CF903E /* RxWebKit.framework in Frameworks */,
 				A051DA9F20BD398400CF903E /* RxSwift.framework in Frameworks */,
 				A051DAA220BD398400CF903E /* SDWebImage.framework in Frameworks */,
 				A051DAA320BD398400CF903E /* RxCocoa.framework in Frameworks */,
@@ -82,6 +95,9 @@
 		84A47DC8CADB29D237A27D6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A05D331B20C115790071C373 /* TwitterKit.framework */,
+				A05D331C20C115790071C373 /* TwitterShareExtensionUI.framework */,
+				A051DAD020C1065100CF903E /* RxWebKit.framework */,
 				A051DA9E20BD398300CF903E /* Alamofire.framework */,
 				A051DA9A20BD398200CF903E /* RxBlocking.framework */,
 				A051DA9D20BD398300CF903E /* RxCocoa.framework */,
@@ -114,6 +130,7 @@
 		A051DA7C20BD367200CF903E /* Qita-ios-master */ = {
 			isa = PBXGroup;
 			children = (
+				A051DACB20C1054E00CF903E /* LoginView */,
 				A051DAAB20BD4A9000CF903E /* ArticleView */,
 				A051DAC620C0363100CF903E /* ArticleWebView */,
 				A051DAAC20BD4B9B00CF903E /* Codable */,
@@ -154,6 +171,15 @@
 				A051DAC920C0391000CF903E /* QitaWebViewController.storyboard */,
 			);
 			path = ArticleWebView;
+			sourceTree = "<group>";
+		};
+		A051DACB20C1054E00CF903E /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				A051DACC20C1057000CF903E /* LoginViewController.swift */,
+				A051DACE20C1058700CF903E /* LoginViewController.storyboard */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +247,7 @@
 				A051DA9220BD38AA00CF903E /* ArticleViewController.storyboard in Resources */,
 				A051DA8820BD367300CF903E /* LaunchScreen.storyboard in Resources */,
 				A051DACA20C0391000CF903E /* QitaWebViewController.storyboard in Resources */,
+				A051DACF20C1058700CF903E /* LoginViewController.storyboard in Resources */,
 				A051DA8520BD367300CF903E /* Assets.xcassets in Resources */,
 				A051DA9820BD390D00CF903E /* ArticleViewCell.xib in Resources */,
 			);
@@ -293,6 +320,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxWebKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterShareExtensionUI.framework",
 			);
 			name = " Carthage";
 			outputPaths = (
@@ -308,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A051DACD20C1057100CF903E /* LoginViewController.swift in Sources */,
 				A051DA7E20BD367200CF903E /* AppDelegate.swift in Sources */,
 				A051DA9720BD390D00CF903E /* ArticleViewCell.swift in Sources */,
 				A051DAC820C038FB00CF903E /* QitaWebViewController.swift in Sources */,
@@ -453,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KP2474JSD4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -475,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KP2474JSD4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

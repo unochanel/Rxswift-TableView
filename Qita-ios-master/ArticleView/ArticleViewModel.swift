@@ -13,7 +13,9 @@ import Either
 import Alamofire
 
 class ArticleViewModel {
+    
     let refreshTrigger = PublishSubject<Void>()
+    
     let error = PublishSubject<Error>()
     let isRefreshing = BehaviorRelay<Bool>(value: false)
     let cellModels = BehaviorRelay<[ArticleCellViewModel]>(value: [])

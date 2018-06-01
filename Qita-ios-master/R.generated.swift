@@ -70,12 +70,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `ArticleViewController`.
     static let articleViewController = _R.storyboard.articleViewController()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `LoginViewController`.
+    static let loginViewController = _R.storyboard.loginViewController()
     /// Storyboard `QitaWebViewController`.
     static let qitaWebViewController = _R.storyboard.qitaWebViewController()
     
@@ -87,6 +89,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "LoginViewController", bundle: ...)`
+    static func loginViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.loginViewController)
     }
     
     /// `UIStoryboard(name: "QitaWebViewController", bundle: ...)`
@@ -142,6 +149,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try qitaWebViewController.validate()
       try articleViewController.validate()
+      try loginViewController.validate()
     }
     
     struct articleViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -167,6 +175,24 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      fileprivate init() {}
+    }
+    
+    struct loginViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LoginViewController
+      
+      let bundle = R.hostingBundle
+      let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
+      let name = "LoginViewController"
+      
+      func loginViewController(_: Void = ()) -> LoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.loginViewController().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'LoginViewController' as 'LoginViewController'.") }
+      }
       
       fileprivate init() {}
     }
