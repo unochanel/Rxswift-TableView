@@ -31,6 +31,7 @@ class ArticleViewModel {
                         let decoder: JSONDecoder = JSONDecoder()
                         do {
                             let models = try decoder.decode([QitaRssGet].self, from: response.data!)
+                            //ArticleCellViewModelを初期化して、引数にmodels（QitaRssGet）を取ってる。
                             self?.cellModels.accept(models.map { ArticleCellViewModel($0) })
                         } catch let error {
                             self?.error.onNext(error)

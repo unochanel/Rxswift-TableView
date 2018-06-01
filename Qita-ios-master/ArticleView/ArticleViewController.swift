@@ -63,6 +63,7 @@ extension ArticleViewController {
             .subscribe(onNext: {[weak self] url in
                 guard let wself = self else { return }
                 guard let u = url else {
+                    //todo: assertionFailurについて調べる。
                     assertionFailure("not exist url")
                     return
                 }
