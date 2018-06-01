@@ -18,11 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31F-UR-N66">
-                                <rect key="frame" x="117" y="119" width="140" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31F-UR-N66">
+                                <rect key="frame" x="90" y="119" width="195" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="P7X-Y9-MTS"/>
-                                    <constraint firstAttribute="height" constant="64" id="peR-aG-hIW"/>
+                                    <constraint firstAttribute="width" constant="180" id="Cdl-Oh-uZL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="53"/>
                                 <nil key="textColor"/>
@@ -31,9 +30,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RZ7-GI-uIM" firstAttribute="trailing" secondItem="31F-UR-N66" secondAttribute="trailing" constant="118" id="A9f-f0-cfA"/>
-                            <constraint firstItem="31F-UR-N66" firstAttribute="leading" secondItem="RZ7-GI-uIM" secondAttribute="leading" constant="117" id="QsQ-9D-dxU"/>
-                            <constraint firstItem="31F-UR-N66" firstAttribute="top" secondItem="RZ7-GI-uIM" secondAttribute="top" constant="99" id="TjH-qI-2UQ"/>
+                            <constraint firstItem="31F-UR-N66" firstAttribute="leading" secondItem="RZ7-GI-uIM" secondAttribute="leading" constant="90" id="g4T-2F-Q2e"/>
+                            <constraint firstItem="31F-UR-N66" firstAttribute="top" secondItem="RZ7-GI-uIM" secondAttribute="top" constant="99" id="gcY-Xe-Y0H"/>
+                            <constraint firstItem="RZ7-GI-uIM" firstAttribute="trailing" secondItem="31F-UR-N66" secondAttribute="trailing" constant="90" id="mnK-KQ-mlL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RZ7-GI-uIM"/>
                     </view>
