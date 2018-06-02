@@ -20,31 +20,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hhhhhhhhhh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-4B-o0M">
-                        <rect key="frame" x="16" y="8" width="201" height="63.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="63.5" id="etv-fL-9CG"/>
-                        </constraints>
+                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PBI-Rp-QUw">
+                        <rect key="frame" x="16" y="8" width="97.5" height="20.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hhhhhhhhhh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-4B-o0M">
+                        <rect key="frame" x="8" y="8" width="229" height="64"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eka-LM-qov">
-                        <rect key="frame" x="248" y="8" width="63.5" height="63.5"/>
+                        <rect key="frame" x="245" y="8" width="63.5" height="63.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="eka-LM-qov" secondAttribute="height" multiplier="1:1" id="gBH-aY-I7s"/>
+                            <constraint firstAttribute="width" constant="63.5" id="TSo-pS-BHd"/>
+                            <constraint firstAttribute="width" secondItem="eka-LM-qov" secondAttribute="height" multiplier="1:1" id="ouU-IV-A0N"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="9h5-4B-o0M" secondAttribute="bottom" constant="8" id="25G-bY-wPr"/>
-                    <constraint firstItem="eka-LM-qov" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="GMj-p5-JWx"/>
-                    <constraint firstItem="9h5-4B-o0M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Mlu-Ti-cSv"/>
-                    <constraint firstAttribute="bottom" secondItem="eka-LM-qov" secondAttribute="bottom" constant="8" id="OIg-Lb-Zsh"/>
-                    <constraint firstAttribute="trailing" secondItem="eka-LM-qov" secondAttribute="trailing" constant="8.5" id="cJo-o9-bfG"/>
-                    <constraint firstItem="eka-LM-qov" firstAttribute="leading" secondItem="9h5-4B-o0M" secondAttribute="trailing" constant="31" id="dyr-nK-iph"/>
-                    <constraint firstItem="eka-LM-qov" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9h5-4B-o0M" secondAttribute="trailing" priority="750" constant="31" id="gWx-TR-tne"/>
-                    <constraint firstItem="9h5-4B-o0M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wiA-kr-rBP"/>
+                    <constraint firstItem="eka-LM-qov" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8a1-UN-Ovd"/>
+                    <constraint firstAttribute="trailing" secondItem="eka-LM-qov" secondAttribute="trailing" constant="11.5" id="iLM-fo-vaN"/>
+                    <constraint firstAttribute="bottom" secondItem="eka-LM-qov" secondAttribute="bottom" constant="8" id="yAL-GU-89x"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
