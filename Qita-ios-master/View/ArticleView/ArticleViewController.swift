@@ -34,24 +34,28 @@ extension ArticleViewController {
     func configure() {
         configureUI()
         configureVM()
+        configureNavigationController()
         bindToTableView()
     }
-    
+
     func configureUI() {
-        title = "COIN NEWS"
         registerNib()
     }
-    
+
     func configureVM() {
         viewModel.cellModels.asDriver()
             .drive(tableView.rx.items(cellIdentifier: R.reuseIdentifier.articleViewCell.identifier, cellType: ArticleViewCell.self)) { _, cellModel, cell in
                 cell.configure(cm: cellModel)
             }
             .disposed(by: disposeBag)
-        
+
         viewModel.isRefreshing.asDriver()
             .drive(refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
+    }
+
+    func configureNavigationController() {
+        self.title = "新規記事"
     }
     
     func bindToTableView() {
@@ -66,7 +70,6 @@ extension ArticleViewController {
                     assertionFailure("not exist url")
                     return
                 }
-                //todo:今後webViewに飛べるような処理をかく
                     let safariViewController = SFSafariViewController(url: u)
                     self?.present(safariViewController, animated: true, completion: nil)
             })
@@ -78,7 +81,7 @@ extension ArticleViewController: UITableViewDelegate {
     func tableView(_: UITableView, editingStyleForRowAt _: IndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.none
     }
-    
+
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 80
     }

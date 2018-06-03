@@ -16,11 +16,11 @@ class LaunchDummyViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if UserSession.userDefaults.bool(forKey: UserSession.Key.UserSession) == true {
+//        if UserSession.userDefaults.bool(forKey: UserSession.Key.UserSession) == true {
             self.toArticleView()
-        } else {
-            self.tologinView()
-        }
+//        } else {
+//            self.tologinView()
+//        }
     }
 }
 
@@ -29,10 +29,10 @@ extension  LaunchDummyViewController {
         let articleVC = R.storyboard.articleViewController.instantiateInitialViewController()!
         present(articleVC, animated: true)
     }
-    
-    private func tologinView() {
-        let loginVC = R.storyboard.loginViewController.instantiateInitialViewController()!
-        present(loginVC, animated: true)
-    }
+//
+//    private func tologinView() {
+//        let loginVC = R.storyboard.loginViewController.instantiateInitialViewController()!
+//        present(loginVC, animated: true)
+//    }
 }
 

@@ -13,6 +13,7 @@ import TwitterKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var articleNavigationController: UINavigationController?
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if TWTRTwitter.sharedInstance().application(app, open: url, options: options) {
@@ -23,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         TWTRTwitter.sharedInstance().start(withConsumerKey: "wTvY81OL2pYtUS94sFTV9djnL", consumerSecret: "mEzghUOiGAvMBMt3w1YU3utMU65O5SvFLxYGviexlxP3SJxh2b")
+
+        window?.frame = UIScreen.main.bounds
+        window?.rootViewController = UINavigationController(rootViewController: ArticleViewController.create())
+        //これで、windowを表示させることができる。
+        window?.makeKeyAndVisible()
         return true
     }
 
