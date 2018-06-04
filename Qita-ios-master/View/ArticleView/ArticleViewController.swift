@@ -34,31 +34,41 @@ extension ArticleViewController {
     func configure() {
         configureUI()
         configureVM()
-        configureNavigationController()
         bindToTableView()
     }
-
+    
     func configureUI() {
         registerNib()
+        configureNavigationController()
+        refreshControl
+            .rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.refreshTrigger)
+            .disposed(by: disposeBag)
     }
-
+    
+    func configureNavigationController() {
+        self.title = "新規記事"
+    }
+    
     func configureVM() {
         viewModel.cellModels.asDriver()
             .drive(tableView.rx.items(cellIdentifier: R.reuseIdentifier.articleViewCell.identifier, cellType: ArticleViewCell.self)) { _, cellModel, cell in
                 cell.configure(cm: cellModel)
             }
             .disposed(by: disposeBag)
-
+        
         viewModel.isRefreshing.asDriver()
             .drive(refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
     }
-
-    func configureNavigationController() {
-        self.title = "新規記事"
-    }
     
     func bindToTableView() {
+        tableView.addSubview(refreshControl)
+
+        tableView
+            .rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
         tableView.rx.itemSelected
             .flatMap({ [weak self] indexPath -> Observable<URL?> in
                 guard let wself = self else { return Observable.empty() }
@@ -70,8 +80,8 @@ extension ArticleViewController {
                     assertionFailure("not exist url")
                     return
                 }
-                    let safariViewController = SFSafariViewController(url: u)
-                    self?.present(safariViewController, animated: true, completion: nil)
+                let safariViewController = SFSafariViewController(url: u)
+                self?.present(safariViewController, animated: true, completion: nil)
             })
             .disposed(by: disposeBag)
     }
@@ -81,7 +91,7 @@ extension ArticleViewController: UITableViewDelegate {
     func tableView(_: UITableView, editingStyleForRowAt _: IndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.none
     }
-
+    
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 80
     }
