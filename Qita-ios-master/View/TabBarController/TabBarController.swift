@@ -12,7 +12,6 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("呼ばれたよ")
     }
 
     override func didReceiveMemoryWarning() {
