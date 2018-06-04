@@ -39,7 +39,7 @@ extension LoginViewController {
 extension LoginViewController {
     private func presentArticleViewController() {
         UserSession.userDefaults.set(true, forKey: UserSession.Key.UserSession)
-        let articleVC = R.storyboard.articleViewController.instantiateInitialViewController()!
-        present(articleVC, animated: true)
+            let tabBarC = R.storyboard.tabBarController.instantiateInitialViewController()!
+            present(tabBarC, animated: true)
     }
 }
