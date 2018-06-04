@@ -37,6 +37,11 @@
 		A05D333720C50F390071C373 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05D333620C50F390071C373 /* TabBarController.storyboard */; };
 		A05D333A20C50F9E0071C373 /* NewsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05D333920C50F9E0071C373 /* NewsViewController.storyboard */; };
 		A05D333C20C50FAF0071C373 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D333B20C50FAF0071C373 /* NewsViewController.swift */; };
+		A05D333E20C5306A0071C373 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D333D20C5306A0071C373 /* NewsViewModel.swift */; };
+		A05D334120C5309A0071C373 /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D333F20C5309A0071C373 /* NewsViewCell.swift */; };
+		A05D334220C5309A0071C373 /* NewsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05D334020C5309A0071C373 /* NewsViewCell.xib */; };
+		A05D334C20C56F7F0071C373 /* QitaRssGetRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D334B20C56F7F0071C373 /* QitaRssGetRepositoryImpl.swift */; };
+		A05D334E20C56FF70071C373 /* QitaRssGetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D334D20C56FF70071C373 /* QitaRssGetRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +80,11 @@
 		A05D333620C50F390071C373 /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A05D333920C50F9E0071C373 /* NewsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsViewController.storyboard; sourceTree = "<group>"; };
 		A05D333B20C50FAF0071C373 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		A05D333D20C5306A0071C373 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		A05D333F20C5309A0071C373 /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
+		A05D334020C5309A0071C373 /* NewsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewCell.xib; sourceTree = "<group>"; };
+		A05D334B20C56F7F0071C373 /* QitaRssGetRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaRssGetRepositoryImpl.swift; sourceTree = "<group>"; };
+		A05D334D20C56FF70071C373 /* QitaRssGetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QitaRssGetRepository.swift; sourceTree = "<group>"; };
 		CC3E37CDD6043ADB44B62C05 /* Pods-Qita-ios-master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qita-ios-master.release.xcconfig"; path = "Pods/Target Support Files/Pods-Qita-ios-master/Pods-Qita-ios-master.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +157,7 @@
 				A05D332020C149D60071C373 /* View */,
 				A051DAAC20BD4B9B00CF903E /* Codable */,
 				A05D332120C149EE0071C373 /* UserDefault */,
+				A05D334A20C56F610071C373 /* API */,
 				A051DA7D20BD367200CF903E /* AppDelegate.swift */,
 				A051DAA720BD3AAE00CF903E /* R.generated.swift */,
 				A051DA8420BD367300CF903E /* Assets.xcassets */,
@@ -238,9 +249,21 @@
 			isa = PBXGroup;
 			children = (
 				A05D333B20C50FAF0071C373 /* NewsViewController.swift */,
+				A05D333D20C5306A0071C373 /* NewsViewModel.swift */,
 				A05D333920C50F9E0071C373 /* NewsViewController.storyboard */,
+				A05D333F20C5309A0071C373 /* NewsViewCell.swift */,
+				A05D334020C5309A0071C373 /* NewsViewCell.xib */,
 			);
 			path = NewsView;
+			sourceTree = "<group>";
+		};
+		A05D334A20C56F610071C373 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A05D334B20C56F7F0071C373 /* QitaRssGetRepositoryImpl.swift */,
+				A05D334D20C56FF70071C373 /* QitaRssGetRepository.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +335,7 @@
 				A051DACF20C1058700CF903E /* LoginViewController.storyboard in Resources */,
 				A05D333A20C50F9E0071C373 /* NewsViewController.storyboard in Resources */,
 				A051DA8520BD367300CF903E /* Assets.xcassets in Resources */,
+				A05D334220C5309A0071C373 /* NewsViewCell.xib in Resources */,
 				A051DA9820BD390D00CF903E /* ArticleViewCell.xib in Resources */,
 				A05D332C20C18C820071C373 /* LaunchDummyViewController.storyboard in Resources */,
 			);
@@ -413,8 +437,12 @@
 				A051DAAE20BD4BE000CF903E /* QitaCodable.swift in Sources */,
 				A051DAAA20BD3D4F00CF903E /* ArticleViewModel.swift in Sources */,
 				A05D333520C50F1F0071C373 /* TabBarController.swift in Sources */,
+				A05D333E20C5306A0071C373 /* NewsViewModel.swift in Sources */,
+				A05D334120C5309A0071C373 /* NewsViewCell.swift in Sources */,
+				A05D334C20C56F7F0071C373 /* QitaRssGetRepositoryImpl.swift in Sources */,
 				A051DABC20BE813600CF903E /* ArticleCellModel.swift in Sources */,
 				A051DAA820BD3AAE00CF903E /* R.generated.swift in Sources */,
+				A05D334E20C56FF70071C373 /* QitaRssGetRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

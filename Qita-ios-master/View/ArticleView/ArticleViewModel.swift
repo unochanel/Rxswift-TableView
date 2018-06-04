@@ -12,34 +12,22 @@ import RxSwift
 import Either
 import Alamofire
 
+
 class ArticleViewModel {
     
     let refreshTrigger = PublishSubject<Void>()
-    
-    let error = PublishSubject<Error>()
+    let result: Observable<Either<Error, [QitaRssGet]>>
+
     let isRefreshing = BehaviorRelay<Bool>(value: false)
     let cellModels = BehaviorRelay<[ArticleCellViewModel]>(value: [])
-
+    
     private let disposeBag = DisposeBag()
-
-    init() {
-        refreshTrigger
-            .subscribe(onNext: { [weak self] _ in
-                self?.isRefreshing.accept(true)
-                Alamofire.request("https://qiita.com/api/v2/items?page=1&per_page=40", method: .get)
-                    .responseJSON{ [weak self] response in
-                        self?.isRefreshing.accept(false)
-                        
-                        let decoder: JSONDecoder = JSONDecoder()
-                        do {
-                            let models = try decoder.decode([QitaRssGet].self, from: response.data!)
-                            //ArticleCellViewModelを初期化して、引数にmodels（QitaRssGet）を取ってる。
-                            self?.cellModels.accept(models.map { ArticleCellViewModel($0) })
-                        } catch let error {
-                            self?.error.onNext(error)
-                    }
-                }
-            })
-            .disposed(by: disposeBag)
+    
+    init(qitaRepo: QitaRssGetRepository) {
+        result = refreshTrigger
+            .flatMap { _ -> Observable<Either<Error, [QitaRssGet]>> in
+                qitaRepo.getQiita()
+            }
+            .share(replay: 1)
     }
 }

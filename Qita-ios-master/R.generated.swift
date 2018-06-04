@@ -44,23 +44,32 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `ArticleViewCell`.
     static let articleViewCell = _R.nib._ArticleViewCell()
+    /// Nib `NewsViewCell`.
+    static let newsViewCell = _R.nib._NewsViewCell()
     
     /// `UINib(name: "ArticleViewCell", in: bundle)`
     static func articleViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.articleViewCell)
     }
     
+    /// `UINib(name: "NewsViewCell", in: bundle)`
+    static func newsViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.newsViewCell)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `articleViewCell`.
     static let articleViewCell: Rswift.ReuseIdentifier<ArticleViewCell> = Rswift.ReuseIdentifier(identifier: "articleViewCell")
+    /// Reuse identifier `newsViewCell`.
+    static let newsViewCell: Rswift.ReuseIdentifier<NewsViewCell> = Rswift.ReuseIdentifier(identifier: "newsViewCell")
     
     fileprivate init() {}
   }
@@ -163,6 +172,20 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _NewsViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = NewsViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "newsViewCell"
+      let name = "NewsViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> NewsViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewsViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -244,7 +267,7 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "NewsViewController"
-      let newsViewController = StoryboardViewControllerResource<NewsViewController>(identifier: "NewsViewController")
+      let newsViewController = StoryboardViewControllerResource<NewsViewController>(identifier: "newsViewController")
       
       func newsViewController(_: Void = ()) -> NewsViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: newsViewController)

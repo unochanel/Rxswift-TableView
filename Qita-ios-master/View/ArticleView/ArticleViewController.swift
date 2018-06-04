@@ -21,7 +21,7 @@ class ArticleViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     private let refreshControl = UIRefreshControl()
-    private let viewModel = ArticleViewModel()
+    private let viewModel = ArticleViewModel(qitaRepo: QitaRssGetRepositoryImpl())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,26 +31,22 @@ class ArticleViewController: UIViewController {
 }
 
 extension ArticleViewController {
-    func configure() {
+    private func configure() {
         configureUI()
         configureVM()
         bindToTableView()
     }
     
-    func configureUI() {
+    private func configureUI() {
+        self.title = "Qita記事"
         registerNib()
-        configureNavigationController()
         refreshControl
             .rx.controlEvent(.valueChanged)
             .bind(to: viewModel.refreshTrigger)
             .disposed(by: disposeBag)
     }
-    
-    func configureNavigationController() {
-        self.title = "Qita記事"
-    }
-    
-    func configureVM() {
+
+    private func configureVM() {
         viewModel.cellModels.asDriver()
             .drive(tableView.rx.items(cellIdentifier: R.reuseIdentifier.articleViewCell.identifier, cellType: ArticleViewCell.self)) { _, cellModel, cell in
                 cell.configure(cm: cellModel)
@@ -60,9 +56,22 @@ extension ArticleViewController {
         viewModel.isRefreshing.asDriver()
             .drive(refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
+        
+        viewModel
+            .result
+            .subscribe(onNext: { [weak self] either in
+                switch either {
+                case let .left(error):
+                    //todo:エラー時の処理をかく
+                    break
+                case let .right(response):
+                    self?.viewModel.cellModels.accept(response.map { ArticleCellViewModel($0) })
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
-    func bindToTableView() {
+    private func bindToTableView() {
         tableView.addSubview(refreshControl)
 
         tableView
@@ -98,7 +107,7 @@ extension ArticleViewController: UITableViewDelegate {
 }
 
 extension ArticleViewController {
-    func registerNib() {
+    private func registerNib() {
         let nib = R.nib.articleViewCell()
         tableView.register(
             nib,
