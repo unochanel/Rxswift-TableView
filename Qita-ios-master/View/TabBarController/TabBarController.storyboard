@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oNw-Xi-kWw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ArticleViewController-->
+        <scene sceneID="pl8-J6-hR7">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ArticleViewController" storyboardName="ArticleViewController" id="pPx-rd-dAk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="iLK-NY-IvP"/>
+                    <navigationItem key="navigationItem" id="iSI-Wm-jaY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8j9-ir-c0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="-164"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Z50-kF-vsF">
+            <objects>
+                <navigationController id="XiG-B2-R15" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vqR-Mf-1is"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JXZ-3J-Afx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pPx-rd-dAk" kind="relationship" relationship="rootViewController" id="Lrn-d8-qxl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5m-6e-NE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289" y="-163"/>
+        </scene>
+        <!--NewsViewController-->
+        <scene sceneID="Imf-ry-EGS">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="NewsViewController" storyboardName="NewsViewController" id="QVp-c3-HKw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="eNF-03-U4t"/>
+                    <navigationItem key="navigationItem" id="ced-WN-BlN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oC8-Jd-Plo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="538"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="W0e-69-Sgf">
+            <objects>
+                <navigationController id="YYv-FL-1ka" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="TKK-0N-rif"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aas-nv-yX4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QVp-c3-HKw" kind="relationship" relationship="rootViewController" id="oMY-in-b5z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62D-aA-vQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="539"/>
+        </scene>
+        <!--TabBarController-->
+        <scene sceneID="vf6-uj-aJc">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" title="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oNw-Xi-kWw" customClass="TabBarController" customModule="Qita_ios_master" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I2i-8I-Je8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XiG-B2-R15" kind="relationship" relationship="viewControllers" id="SYG-HP-7sL"/>
+                        <segue destination="YYv-FL-1ka" kind="relationship" relationship="viewControllers" id="wWu-9r-Akp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vkk-vm-cn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-575" y="188"/>
+        </scene>
+    </scenes>
+</document>

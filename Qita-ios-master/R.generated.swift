@@ -70,7 +70,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `ArticleViewController`.
     static let articleViewController = _R.storyboard.articleViewController()
@@ -80,8 +80,12 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `LoginViewController`.
     static let loginViewController = _R.storyboard.loginViewController()
+    /// Storyboard `NewsViewController`.
+    static let newsViewController = _R.storyboard.newsViewController()
     /// Storyboard `QitaWebViewController`.
     static let qitaWebViewController = _R.storyboard.qitaWebViewController()
+    /// Storyboard `TabBarController`.
+    static let tabBarController = _R.storyboard.tabBarController()
     
     /// `UIStoryboard(name: "ArticleViewController", bundle: ...)`
     static func articleViewController(_: Void = ()) -> UIKit.UIStoryboard {
@@ -103,9 +107,19 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.loginViewController)
     }
     
+    /// `UIStoryboard(name: "NewsViewController", bundle: ...)`
+    static func newsViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.newsViewController)
+    }
+    
     /// `UIStoryboard(name: "QitaWebViewController", bundle: ...)`
     static func qitaWebViewController(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.qitaWebViewController)
+    }
+    
+    /// `UIStoryboard(name: "TabBarController", bundle: ...)`
+    static func tabBarController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.tabBarController)
     }
     
     fileprivate init() {}
@@ -157,6 +171,8 @@ struct _R: Rswift.Validatable {
       try qitaWebViewController.validate()
       try articleViewController.validate()
       try launchDummyViewController.validate()
+      try tabBarController.validate()
+      try newsViewController.validate()
       try loginViewController.validate()
     }
     
@@ -223,6 +239,24 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct newsViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = NewsViewController
+      
+      let bundle = R.hostingBundle
+      let name = "NewsViewController"
+      let newsViewController = StoryboardViewControllerResource<NewsViewController>(identifier: "NewsViewController")
+      
+      func newsViewController(_: Void = ()) -> NewsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: newsViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.newsViewController().newsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newsViewController' could not be loaded from storyboard 'NewsViewController' as 'NewsViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct qitaWebViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = QitaWebViewController
       
@@ -236,6 +270,24 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if _R.storyboard.qitaWebViewController().qitaWebViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'qitaWebViewController' could not be loaded from storyboard 'QitaWebViewController' as 'QitaWebViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct tabBarController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = TabBarController
+      
+      let bundle = R.hostingBundle
+      let name = "TabBarController"
+      let tabBarController = StoryboardViewControllerResource<TabBarController>(identifier: "TabBarController")
+      
+      func tabBarController(_: Void = ()) -> TabBarController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: tabBarController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.tabBarController().tabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'tabBarController' could not be loaded from storyboard 'TabBarController' as 'TabBarController'.") }
       }
       
       fileprivate init() {}

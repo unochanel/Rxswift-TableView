@@ -47,7 +47,7 @@ extension ArticleViewController {
     }
     
     func configureNavigationController() {
-        self.title = "新規記事"
+        self.title = "Qita記事"
     }
     
     func configureVM() {
