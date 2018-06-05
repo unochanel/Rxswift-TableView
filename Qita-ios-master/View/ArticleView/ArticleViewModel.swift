@@ -22,7 +22,8 @@ class ArticleViewModel {
     let cellModels = BehaviorRelay<[ArticleCellViewModel]>(value: [])
     
     private let disposeBag = DisposeBag()
-    
+
+    //init生成時には、selfが利用できない。依存性の注入を行うため引数にqitaRepo使っている。
     init(qitaRepo: QitaRssGetRepository) {
         result = refreshTrigger
             .flatMap { _ -> Observable<Either<Error, [QitaRssGet]>> in

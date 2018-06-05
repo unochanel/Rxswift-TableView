@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
+import Either
 
 protocol QitaRssGetRepository  {
     func getQiita() -> Observable<Either<Error, [QitaRssGet]>>
