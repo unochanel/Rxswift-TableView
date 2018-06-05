@@ -14,6 +14,7 @@ import Alamofire
 
 public final class QitaRssGetRepositoryImpl: QitaRssGetRepository {
     func getQiita() -> Observable<Either<Error, [QitaRssGet]>> {
+        //observableのcreateを使うと、引数にはdisposableを使う
         return Observable.create { [weak self] (observable) -> Disposable in
             Alamofire.request("https://qiita.com/api/v2/items?page=1&per_page=40", method: .get)
                 .responseJSON { response in
